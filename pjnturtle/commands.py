@@ -1,8 +1,7 @@
 import math
 from PIL import Image, ImageDraw
 
-from .color import Color
-
+import color
     
 def draw_test():
     
