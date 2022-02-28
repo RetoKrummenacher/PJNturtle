@@ -7,7 +7,7 @@ def draw_test():
     
     w, h = 1000,1000
     
-    img = Image.new('RGB',(w,h), Color['WHITE'])
+    img = Image.new('RGB',(w,h), Color.WHITE)
     draw = ImageDraw.Draw(img)
     
     # draw axis    
