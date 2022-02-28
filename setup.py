@@ -14,6 +14,6 @@ setuptools.setup(
     url = 'https://github.com/RetoKrummenacher/simpleTurtleForJupyter',
     license = 'Apache 2.0',
     packages = ['pjnturtle'],
-    install_requires = ['PIL','numpy'],    
+    install_requires = ['Pillow','numpy'],    
 )
 
