@@ -3,11 +3,10 @@
 from enum import Enum
 
 class Color:
+
+    BLACK = (0,0,0)
+    WHITE = (255,255,255)
     
-    def __init__(self):
-        self.BLACK = (0,0,0)
-        self.WHITE = (255,255,255)
-    
-Color = Color()
+
 
 
