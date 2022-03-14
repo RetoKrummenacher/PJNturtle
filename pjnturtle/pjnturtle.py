@@ -18,13 +18,17 @@ Available commands
 # Temporary for Spyder to work, not needed in Jupyter
 import PIL as pil
 from IPython.display import display
-import collections, os
+import collections
 
-from common.point import Point
-from common.utils import Utils
-from common.penstate import PenState
-from common.color import Color
-from common.colordict import ColorDict
+import os, sys
+fpath = os.path.join(os.path.dirname(__file__), 'common')
+sys.path.append(fpath)
+
+from point import Point
+from utils import Utils
+from penstate import PenState
+from color import Color
+from colordict import ColorDict
 
 class PJNturtle:    
     
