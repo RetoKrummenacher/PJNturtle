@@ -20,11 +20,7 @@ import PIL as pil
 from IPython.display import display
 import collections
 
-import os, sys
-fpath = os.path.join(os.path.dirname(__file__), 'common')
-sys.path.append(fpath)
-
-from point import Point
+from .common.point import Point
 from utils import Utils
 from penstate import PenState
 from color import Color
