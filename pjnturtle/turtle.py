@@ -20,6 +20,7 @@ Available commands
 from PIL import Image, ImageDraw, ImageFont
 from IPython.display import display
 import collections
+from importlib import resources
 
 
 from pjnturtle.common.point import Point
@@ -137,7 +138,7 @@ class Turtle:
         
     def drawTurtle(self):
         # resPath = os.path.join('resources','turtle.png')
-        with Image.open('pjnturtle.resources.turtle.png') as im:
+        with Image.open(resources.path('pjnturtle.resources','turtle.png')) as im:
             w, h = im.size
             # using integer devision as resize takes int
             w = w // 2
@@ -160,7 +161,8 @@ class Turtle:
         self.img.paste(im, box, im)
         
     def write(self, text, fontSize):
-        font = ImageFont.truetype('pjnturtle.resources.times-ro.ttf', fontSize)
+        font = ImageFont.truetype(resources.path('pjnturtle.resources','times-ro.ttf'),
+                                  fontSize)
         self.canvas.text(self.current_position.getPoint(), text,
                          self.pen_color.get_rgb(), font = font)
         

@@ -3,10 +3,9 @@ import setuptools
 with open('README.md', 'r', encoding = ' utf-8') as rm:
     long_description = rm.read()
 
-
 setuptools.setup(
     name = 'pjnturtle',
-    version = '0.0.28',
+    version = '0.0.29',
     author = 'Reto Krummenacher',
     author_email = 'reto.krummenacher@unibas.ch',
     description = 'Simple python turtle for Jupyter Notebooks',
@@ -16,6 +15,6 @@ setuptools.setup(
     license = 'Apache 2.0',
     packages = ['pjnturtle', 'pjnturtle.common'],
     package_date = {'': ['*.png','*.ttf']},
-    install_requires = ['Pillow'],    
+    install_requires = ['Pillow','importlib'],    
 )
 
