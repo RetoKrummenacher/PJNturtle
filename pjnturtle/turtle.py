@@ -101,7 +101,7 @@ class Turtle:
             self.canvas_color = color      
         
     def addColor(self, name : str, color : Color):
-        self.colors = self.colors.addColor(name, color)
+        self.colors.addColor(name, color)
         
     def color(self, r: int, g: int, b: int) -> Color:
         return Color(r, g, b)    

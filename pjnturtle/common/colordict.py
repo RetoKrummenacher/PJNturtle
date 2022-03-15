@@ -28,5 +28,4 @@ class ColorDict:
     
     def addColor(self, name : str, color : Color ):
         self.colorDict[name] = color
-        return self.colorDict
         
