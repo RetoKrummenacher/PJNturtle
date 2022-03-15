@@ -20,15 +20,11 @@ import PIL as pil
 from IPython.display import display
 import collections
 
-import os, sys
-fpath = os.path.join(os.path.dirname(__file__), 'common')
-sys.path.append(fpath)
-
-from point import Point
-from utils import Utils
-from penstate import PenState
-from color import Color
-from colordict import ColorDict
+from pjnturtle.common.point import Point
+from pjnturtle.common.utils import Utils
+from pjnturtle.common.penstate import PenState
+from pjnturtle.common.color import Color
+from pjnturtle.common.colordict import ColorDict
 
 class Turtle:    
     
