@@ -15,6 +15,6 @@ setuptools.setup(
     license = 'Apache 2.0',
     packages = ['pjnturtle', 'pjnturtle.common'],
     package_date = {'': ['*.png','*.ttf']},
-    install_requires = ['Pillow','importlib'],    
+    install_requires = ['Pillow'],    
 )
 
