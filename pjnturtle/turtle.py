@@ -20,11 +20,11 @@ import PIL as pil
 from IPython.display import display
 import collections
 
-from pjnturtle.common.point import Point
-from pjnturtle.common.utils import Utils
-from pjnturtle.common.penstate import PenState
-from pjnturtle.common.color import Color
-from pjnturtle.common.colordict import ColorDict
+from .common.point import Point
+from .common.utils import Utils
+from .common.penstate import PenState
+from .common.color import Color
+from .common.colordict import ColorDict
 
 class Turtle:    
     
