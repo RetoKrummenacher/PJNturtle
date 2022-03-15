@@ -6,7 +6,7 @@ Created on Fri Mar 11 14:10:49 2022
 """
 
 import math
-from point import Point
+from .point import Point
 
 class Utils:
     

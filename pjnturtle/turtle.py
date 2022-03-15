@@ -20,13 +20,13 @@ import PIL as pil
 from IPython.display import display
 import collections
 
-from pjnturtle.common.point import Point
-from utils import Utils
-from penstate import PenState
-from color import Color
-from colordict import ColorDict
+from .common.point import Point
+from .common.utils import Utils
+from .common.penstate import PenState
+from .common.color import Color
+from .common.colordict import ColorDict
 
-class PJNturtle:    
+class Turtle:    
     
     def __init__(self):
         self.CANVAS_SIZE_X = 1024

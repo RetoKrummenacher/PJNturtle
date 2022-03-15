@@ -5,7 +5,7 @@ Created on Sun Mar 13 16:03:44 2022
 @author: retok
 """
 
-from color import Color
+from .color import Color
 
 class ColorDict:
     
