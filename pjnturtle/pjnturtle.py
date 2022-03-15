@@ -20,7 +20,7 @@ import PIL as pil
 from IPython.display import display
 import collections
 
-from .common.point import Point
+from pjnturtle.common.point import Point
 from utils import Utils
 from penstate import PenState
 from color import Color
