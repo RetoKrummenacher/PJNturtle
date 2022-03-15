@@ -22,6 +22,7 @@ import collections
 
 from pkg_resources import resource_listdir
 
+
 from pjnturtle.common.point import Point
 from pjnturtle.common.utils import Utils
 from pjnturtle.common.penstate import PenState
