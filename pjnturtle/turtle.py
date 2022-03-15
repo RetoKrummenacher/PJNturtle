@@ -138,16 +138,17 @@ class Turtle:
         
     def drawTurtle(self):
         # resPath = os.path.join('resources','turtle.png')
-        with Image.open(resources.path('pjnturtle.resources','turtle.png')) as im:
-            w, h = im.size
-            # using integer devision as resize takes int
-            w = w // 2
-            h = h // 2            
-            im = im.resize((w, h), resample = Image.BILINEAR)
-            # rotation is counter clockwise, we need clockwise
-            im = im.rotate(-self.orientation,
-                            resample = Image.BILINEAR,
-                            expand = 1)
+        with resources.path('pjnturtle.resources', 'turtle.png') as path:
+            with Image.open(path) as im:
+                w, h = im.size
+                # using integer devision as resize takes int
+                w = w // 2
+                h = h // 2            
+                im = im.resize((w, h), resample = Image.BILINEAR)
+                # rotation is counter clockwise, we need clockwise
+                im = im.rotate(-self.orientation,
+                                resample = Image.BILINEAR,
+                                expand = 1)
           
         w, h = im.size
         # use box for position calculated from current position
