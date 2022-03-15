@@ -5,10 +5,10 @@ with open('README.md', 'r', encoding = ' utf-8') as rm:
 
 setuptools.setup(
     name = 'pjnturtle',
-    version = '0.0.32',
+    version = '1.0',
     author = 'Reto Krummenacher',
     author_email = 'reto.krummenacher@unibas.ch',
-    description = 'Simple python turtle for Jupyter Notebooks',
+    description = 'Simple Turtle Graphics in Python for Jupyter Notebooks',
     long_description = long_description,
     long_description_content_type = 'text/markdown',
     url = 'https://github.com/RetoKrummenacher/PJNturtle',
