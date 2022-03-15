@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding = ' utf-8') as rm:
 
 setuptools.setup(
     name = 'pjnturtle',
-    version = '0.0.18',
+    version = '0.0.19',
     author = 'Reto Krummenacher',
     author_email = 'reto.krummenacher@unibas.ch',
     description = 'Simple python turtle for Jupyter Notebooks',
