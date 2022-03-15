@@ -3,9 +3,10 @@ import setuptools
 with open('README.md', 'r', encoding = ' utf-8') as rm:
     long_description = rm.read()
 
+
 setuptools.setup(
     name = 'pjnturtle',
-    version = '0.0.26',
+    version = '0.0.27',
     author = 'Reto Krummenacher',
     author_email = 'reto.krummenacher@unibas.ch',
     description = 'Simple python turtle for Jupyter Notebooks',

@@ -15,6 +15,7 @@ Available commands
 """
 
 
+
 # Temporary for Spyder to work, not needed in Jupyter
 from PIL import Image, ImageDraw, ImageFont
 from IPython.display import display
