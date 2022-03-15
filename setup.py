@@ -11,7 +11,7 @@ setuptools.setup(
     description = 'Simple python turtle for Jupyter Notebooks',
     long_description = long_description,
     long_description_content_type = 'text/markdown',
-    url = 'https://github.com/RetoKrummenacher/simpleTurtleForJupyter',
+    url = 'https://github.com/RetoKrummenacher/PJNturtle',
     license = 'Apache 2.0',
     packages = ['pjnturtle', 'pjnturtle.common','pjnturtle.resources'],
     package_data = {'pjnturtle': ['resources/*.png','resources/*.ttf']},
