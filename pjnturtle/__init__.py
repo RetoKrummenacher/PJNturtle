@@ -2,8 +2,12 @@
 
 from pjnturtle.turtle import *
 
-from pjnturtle.common.point import *
-from pjnturtle.common.utils import *
-from pjnturtle.common.penstate import *
-from pjnturtle.common.color import *
-from pjnturtle.common.colordict import *
+import os, sys
+fpath = os.path.join(os.path.dirname(__file__), 'common')
+sys.path.append(fpath)
+
+from point import *
+from utils import *
+from penstate import *
+from color import *
+from colordict import *
