@@ -16,9 +16,9 @@ Available commands
 
 
 # Temporary for Spyder to work, not needed in Jupyter
-import PIL as pil
+from PIL import Image, ImageDraw, ImageFont
 from IPython.display import display
-import collections
+import collections, os
 
 from pjnturtle.common.point import Point
 from pjnturtle.common.utils import Utils
@@ -92,9 +92,9 @@ class Turtle:
         self.pen_state = PenState.PEN_DOWN
         
     def clear(self):
-        self.img = pil.Image.new('RGB',(self.CANVAS_SIZE_X, self.CANVAS_SIZE_Y),
+        self.img = Image.new('RGB',(self.CANVAS_SIZE_X, self.CANVAS_SIZE_Y),
                         self.canvas_color.get_rgb())
-        self.canvas = pil.ImageDraw.Draw(self.img)
+        self.canvas = ImageDraw.Draw(self.img)
     
     def penColor(self, color):
         # as Python does not support function overloading, we do type check
@@ -135,15 +135,15 @@ class Turtle:
         
     def drawTurtle(self):
         resPath = os.path.join('resources','turtle.png')
-        with pil.Image.open(resPath) as im:
+        with Image.open(resPath) as im:
             w, h = im.size
             # using integer devision as resize takes int
             w = w // 2
             h = h // 2            
-            im = im.resize((w, h), resample = pil.Image.BILINEAR)
+            im = im.resize((w, h), resample = Image.BILINEAR)
             # rotation is counter clockwise, we need clockwise
             im = im.rotate(-self.orientation,
-                            resample = pil.Image.BILINEAR,
+                            resample = Image.BILINEAR,
                             expand = 1)
           
         w, h = im.size
@@ -159,7 +159,7 @@ class Turtle:
         
     def write(self, text, fontSize):
         resPath = os.path.join('resources','times-ro.ttf')
-        font = pil.ImageFont.truetype(resPath, fontSize)
+        font = ImageFont.truetype(resPath, fontSize)
         self.canvas.text(self.current_position.getPoint(), text,
                          self.pen_color.get_rgb(), font = font)
         
