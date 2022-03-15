@@ -116,6 +116,10 @@ class Turtle:
     def addColor(self, name : str, color : Color):
         self.colors = self.colors.addColor(name, color)
         
+    def color(self, r: int, g: int, b: int) -> Color:
+        return Color(r, g, b)
+    
+        
     def penSize(self, size):
         self.pen_size = size
         
