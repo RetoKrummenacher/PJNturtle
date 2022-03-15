@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding = ' utf-8') as rm:
 
 setuptools.setup(
     name = 'pjnturtle',
-    version = '0.0.23',
+    version = '0.0.24',
     author = 'Reto Krummenacher',
     author_email = 'reto.krummenacher@unibas.ch',
     description = 'Simple python turtle for Jupyter Notebooks',
@@ -14,6 +14,7 @@ setuptools.setup(
     url = 'https://github.com/RetoKrummenacher/simpleTurtleForJupyter',
     license = 'Apache 2.0',
     packages = ['pjnturtle', 'pjnturtle.common'],
+    package_date = {'': ['*.png','*.ttf']},
     install_requires = ['Pillow'],    
 )
 

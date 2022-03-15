@@ -18,7 +18,9 @@ Available commands
 # Temporary for Spyder to work, not needed in Jupyter
 from PIL import Image, ImageDraw, ImageFont
 from IPython.display import display
-import collections, os
+import collections
+
+from pkg_resources import resource_listdir
 
 from pjnturtle.common.point import Point
 from pjnturtle.common.utils import Utils
@@ -54,6 +56,9 @@ class Turtle:
         
         # current postion, start at the center of CANVAS
         self.current_position = self.center
+        
+        # manage ressources
+        self.resources = resource_listdir('pjnturtle.resources', '')
         
     def turnRight(self, angle):
         self.orientation += angle
@@ -134,8 +139,8 @@ class Turtle:
         display(self.img)
         
     def drawTurtle(self):
-        resPath = os.path.join('resources','turtle.png')
-        with Image.open(resPath) as im:
+        # resPath = os.path.join('resources','turtle.png')
+        with Image.open('pjnturtle.resources.turtle.png') as im:
             w, h = im.size
             # using integer devision as resize takes int
             w = w // 2
@@ -158,8 +163,7 @@ class Turtle:
         self.img.paste(im, box, im)
         
     def write(self, text, fontSize):
-        resPath = os.path.join('resources','times-ro.ttf')
-        font = ImageFont.truetype(resPath, fontSize)
+        font = ImageFont.truetype('pjnturtle.resources.times-ro.ttf', fontSize)
         self.canvas.text(self.current_position.getPoint(), text,
                          self.pen_color.get_rgb(), font = font)
         

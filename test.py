@@ -30,7 +30,7 @@ def hexa(l, a, s):
         else:
             i = i + 1
 
-t = PJNturtle()
+t = Turtle()
 t.backgroundColor('BLACK')
 t.clear()
 t.goto(512,312)
