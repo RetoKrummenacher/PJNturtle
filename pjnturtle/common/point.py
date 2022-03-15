@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Mar 11 13:45:47 2022
-
-@author: retok
-"""
+# turtle.py
+# Copyright (C) 2022 Reto Krummenacher and contributors
+#
+# This module is part of PJNturtle and is released under
+# the BSD License: http://www.opensource.org/licenses/bsd-license.php
 
 
 class Point:
@@ -20,3 +20,6 @@ class Point:
     
     def getPoint(self):
         return (self.x, self.y)
+    
+    def toString(self):
+        return ','.join((str(self.x),str(self.y)))

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Fri Mar 11 14:10:49 2022
-
-@author: retok
-"""
+# turtle.py
+# Copyright (C) 2022 Reto Krummenacher and contributors
+#
+# This module is part of PJNturtle and is released under
+# the BSD License: http://www.opensource.org/licenses/bsd-license.php
 
 import math
 from .point import Point

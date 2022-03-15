@@ -1,27 +1,14 @@
 # -*- coding: utf-8 -*-
-"""
-PJNturtle Class
-A Simple Turtle with Python for Jupyter Notebook
-
-Available commands
-    penDown()
-    penUp()
-    forward(length)
-    backward(length)
-    turnRight(degrees)
-    turnLeft(defrees)
-    display()
-    clear()
-"""
+# turtle.py
+# Copyright (C) 2022 Reto Krummenacher and contributors
+#
+# This module is part of PJNturtle and is released under
+# the BSD License: http://www.opensource.org/licenses/bsd-license.php
 
 
-
-# Temporary for Spyder to work, not needed in Jupyter
 from PIL import Image, ImageDraw, ImageFont
 from IPython.display import display
-import collections
 from importlib import resources
-
 
 from pjnturtle.common.point import Point
 from pjnturtle.common.utils import Utils
@@ -87,7 +74,7 @@ class Turtle:
         self.canvas.line(self.current_position.getPoint() + goal_position.getPoint(),
                          fill = self.pen_color.get_rgb(),
                          width = self.pen_size)  
-        
+                
     def penUp(self):
         self.pen_state = PenState.PEN_UP
         
@@ -117,8 +104,7 @@ class Turtle:
         self.colors = self.colors.addColor(name, color)
         
     def color(self, r: int, g: int, b: int) -> Color:
-        return Color(r, g, b)
-    
+        return Color(r, g, b)    
         
     def penSize(self, size):
         self.pen_size = size
@@ -141,7 +127,6 @@ class Turtle:
         display(self.img)
         
     def drawTurtle(self):
-        # resPath = os.path.join('resources','turtle.png')
         with resources.path('pjnturtle.resources', 'turtle.png') as path:
             with Image.open(path) as im:
                 w, h = im.size
@@ -170,39 +155,38 @@ class Turtle:
             font = ImageFont.truetype(str(path), fontSize)
         self.canvas.text(self.current_position.getPoint(), text,
                          self.pen_color.get_rgb(), font = font)
-        
+                
     def fill(self):
         
         screen_point = self.current_position
-        
-        rgb_im = self.img.convert('RGB')
-        r, g, b = rgb_im.getpixel(screen_point.getPoint())        
-        color_to_fill = (r, g ,b)
+                
+        pixels = self.img.load()
+        color_to_fill = pixels[screen_point.x, screen_point.y]
         
         if (color_to_fill == self.pen_color.get_rgb()):
             return
         
-        # using pythons deque() from collections
-        q = collections.deque()
-        q.append(screen_point)
+        # using python dictionary
+        d = {}
+        d[screen_point.toString()] = screen_point
         
-        while(bool(q)):
-            position = q.popleft()
+        # bool(d) returns true if dictionary is not empty
+        while(bool(d)):
+            key, position = d.popitem()
             
-            r, g, b = rgb_im.getpixel(position.getPoint())        
-            this_color = (r, g ,b)
-            
-            if ((position.x >= 0 and position.x < self.CANVAS_SIZE_X and
-                position.y >= 0 and position.y < self.CANVAS_SIZE_Y) and
-                (this_color == color_to_fill)):
+            if ((position.x > 0 and position.x < self.CANVAS_SIZE_X - 1 and
+                 position.y > 0 and position.y < self.CANVAS_SIZE_Y - 1) and
+                (pixels[position.x, position.y] == color_to_fill)):
                 
-                self.img.putpixel(position.getPoint(), color_to_fill)
+                # set color of pixel to pen color
+                pixels[position.x, position.y] = self.pen_color.get_rgb()
                 
-                for i in range(-1,2):
-                    for j in range(-1,2):
-                        if (i != 0 or j != 0) :
-                            q.append(Point(position.x + i, position.y + j))
-                            
+                for e in [(0,-1),(0,1),(-1,0),(1,0)]:
+                    i, j = e
+                    new_point = Point(position.x + i, position.y + j)
+                    # just add new points not yet in d
+                    if (d.get(new_point.toString(),0) == 0):
+                        d[new_point.toString()] = new_point                            
                             
         
         
