@@ -14,7 +14,7 @@ setuptools.setup(
     url = 'https://github.com/RetoKrummenacher/simpleTurtleForJupyter',
     license = 'Apache 2.0',
     packages = ['pjnturtle', 'pjnturtle.common','pjnturtle.resources'],
-    package_date = {'': ['*.png','*.ttf']},
+    package_data = {'pjnturtle': ['resources/*.png','resources/*.ttf']},
     install_requires = ['Pillow'],    
 )
 
