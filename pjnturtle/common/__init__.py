@@ -1,7 +1,7 @@
 # This is to import methods from the package
 
-from .point import Point
-from .utils import Utils
-from .penstate import PenState
-from .color import Color
-from .colordict import ColorDict
+from common.point import Point
+from common.utils import Utils
+from common.penstate import PenState
+from common.color import Color
+from common.colordict import ColorDict

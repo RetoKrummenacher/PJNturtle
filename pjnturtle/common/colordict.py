@@ -10,8 +10,7 @@ from .color import Color
 class ColorDict:
     
     def __init__(self):
-        self.fillColorDict()       
-        
+        self.fillColorDict()               
         
     def fillColorDict(self):
         colDict = {}
