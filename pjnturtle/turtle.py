@@ -162,8 +162,8 @@ class Turtle:
         self.img.paste(im, box, im)
         
     def write(self, text, fontSize):
-        font = ImageFont.truetype(resources.path('pjnturtle.resources','times-ro.ttf'),
-                                  fontSize)
+        with resources.path('pjnturtle.resources','times-ro.ttf') as path:
+            font = ImageFont.truetype(path, fontSize)
         self.canvas.text(self.current_position.getPoint(), text,
                          self.pen_color.get_rgb(), font = font)
         
