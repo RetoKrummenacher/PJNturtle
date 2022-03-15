@@ -21,8 +21,6 @@ from PIL import Image, ImageDraw, ImageFont
 from IPython.display import display
 import collections
 
-# from pkg_resources import resource_listdir
-
 
 from pjnturtle.common.point import Point
 from pjnturtle.common.utils import Utils
@@ -58,9 +56,6 @@ class Turtle:
         
         # current postion, start at the center of CANVAS
         self.current_position = self.center
-        
-        # manage ressources
-        # self.resources = resource_listdir('pjnturtle.resources', '')
         
     def turnRight(self, angle):
         self.orientation += angle
